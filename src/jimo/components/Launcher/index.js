@@ -26,11 +26,52 @@ const Launcher = () => {
         </div>
       </div>
       <div className="launcher-divider" />
-      <LauncherButton label="Tour" onClick={() => {}} />
-      <LauncherButton label="Survey" onClick={() => {}} />
-      <LauncherButton label="Checklist" onClick={() => {}} />
-      <LauncherButton label="Announcement" onClick={() => {}} />
-      <LauncherButton label="Changelog" onClick={() => {}} />
+      <LauncherButton
+        label="Tour"
+        onClick={() => {
+          window.jimo.push([
+            "do",
+            "boosted:trigger",
+            [{ evolutionId: "b93ab406-8b8d-47d9-960a-b7708a546523" }],
+          ]);
+        }}
+      />
+      <LauncherButton
+        label="Survey"
+        onClick={() => {
+          window.jimo.push([
+            "do",
+            "boosted:trigger",
+            [{ evolutionId: "5549c128-b329-40d4-8316-785ff69082bb" }],
+          ]);
+        }}
+      />
+      <LauncherButton
+        label="Checklist"
+        onClick={() => {
+          window.jimo.push([
+            "do",
+            "boosted:trigger",
+            [{ evolutionId: "bcdf2c9a-9d98-4d1c-b1ca-9f79a78c31b1" }],
+          ]);
+        }}
+      />
+      <LauncherButton
+        label="Announcement"
+        onClick={() => {
+          window.jimo.push([
+            "do",
+            "boosted:trigger",
+            [{ evolutionId: "09c03f54-502a-4a40-953d-1f86511b2ca4" }],
+          ]);
+        }}
+      />
+      <LauncherButton
+        label="Changelog"
+        onClick={() => {
+          window.jimo.push(["do", "widget:open"]);
+        }}
+      />
     </div>
   );
 };

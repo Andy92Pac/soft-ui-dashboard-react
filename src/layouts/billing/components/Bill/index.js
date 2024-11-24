@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /**
 =========================================================
 * Soft UI Dashboard React - v4.0.1
@@ -24,7 +25,7 @@ import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import SoftButton from "components/SoftButton";
 
-function Bill({ name, company, email, vat, noGutter }) {
+function Bill({ name, company, email, vat, noGutter, onEdit = () => {}, onDelete = () => {} }) {
   return (
     <SoftBox
       component="li"
@@ -56,11 +57,11 @@ function Bill({ name, company, email, vat, noGutter }) {
             ml={{ xs: -1.5, sm: 0 }}
           >
             <SoftBox mr={1}>
-              <SoftButton variant="text" color="error">
+              <SoftButton variant="text" color="error" onClick={onDelete}>
                 <Icon>delete</Icon>&nbsp;delete
               </SoftButton>
             </SoftBox>
-            <SoftButton variant="text" color="dark">
+            <SoftButton variant="text" color="dark" onClick={onEdit}>
               <Icon>edit</Icon>&nbsp;edit
             </SoftButton>
           </SoftBox>
