@@ -3,9 +3,9 @@ import "./style.css";
 import LogoJimo from "./imgs/logo-jimo.svg";
 import PropTypes from "prop-types";
 
-const LauncherButton = ({ label, onClick }) => {
+const LauncherButton = ({ label, onClick, id }) => {
   return (
-    <div className="launcher-button" onClick={onClick}>
+    <div id={id} className="launcher-button" onClick={onClick}>
       {label}
     </div>
   );
@@ -14,6 +14,7 @@ const LauncherButton = ({ label, onClick }) => {
 LauncherButton.propTypes = {
   label: PropTypes.string,
   onClick: PropTypes.func,
+  id: PropTypes.string,
 };
 
 const Launcher = () => {
@@ -27,26 +28,29 @@ const Launcher = () => {
       </div>
       <div className="launcher-divider" />
       <LauncherButton
+        id="launcher-tour"
         label="Tour"
         onClick={() => {
-          window.jimo.push([
-            "do",
-            "boosted:trigger",
-            [{ evolutionId: "b93ab406-8b8d-47d9-960a-b7708a546523" }],
-          ]);
+          // window.jimo.push([
+          //   "do",
+          //   "boosted:trigger",
+          //   [{ evolutionId: "b93ab406-8b8d-47d9-960a-b7708a546523" }],
+          // ]);
         }}
       />
       <LauncherButton
+        id="launcher-survey"
         label="Survey"
         onClick={() => {
-          window.jimo.push([
-            "do",
-            "boosted:trigger",
-            [{ evolutionId: "5549c128-b329-40d4-8316-785ff69082bb" }],
-          ]);
+          // window.jimo.push([
+          //   "do",
+          //   "boosted:trigger",
+          //   [{ evolutionId: "5549c128-b329-40d4-8316-785ff69082bb" }],
+          // ]);
         }}
       />
       <LauncherButton
+        id="launcher-checklist"
         label="Checklist"
         onClick={() => {
           window.jimo.push([
@@ -57,16 +61,18 @@ const Launcher = () => {
         }}
       />
       <LauncherButton
+        id="launcher-announcement"
         label="Announcement"
         onClick={() => {
-          window.jimo.push([
-            "do",
-            "boosted:trigger",
-            [{ evolutionId: "09c03f54-502a-4a40-953d-1f86511b2ca4" }],
-          ]);
+          // window.jimo.push([
+          //   "do",
+          //   "boosted:trigger",
+          //   [{ evolutionId: "09c03f54-502a-4a40-953d-1f86511b2ca4" }],
+          // ]);
         }}
       />
       <LauncherButton
+        id="launcher-changelog"
         label="Changelog"
         onClick={() => {
           window.jimo.push(["do", "widget:open"]);
