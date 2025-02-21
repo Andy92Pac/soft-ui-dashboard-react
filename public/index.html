@@ -47,25 +47,24 @@ Software.
       src="https://api.nepcha.com/js/nepcha-analytics.js"
     ></script>
 
-    <script>
-      (function(j,i,m,o) {
-          if (j["jimo"] != null) {
-            return;
-          }
-  
-          var s = document.createElement("script");
-  
-          s.type = "text/javascript";
-          s.async = true;
-          s.src = "https://undercity.usejimo.com/jimo-invader.js";
-          
-          j['jimo'] = [];
-          j['JIMO_PROJECT_ID'] = "8beadb1b-436a-44c0-8735-2586ecd2fa8c";
-          
-  
-          document.getElementsByTagName("head")[0].appendChild(s);
-      })(window);
-    </script>
+<script>
+  (function(apiKey){
+      (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=o._q||[];
+      v=['initialize','identify','updateOptions','pageLoad','track'];for(w=0,x=v.length;w<x;++w)(function(m){
+          o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+          y=e.createElement(n);y.async=!0;y.src='https://cdn.eu.pendo.io/agent/static/'+apiKey+'/pendo.js';
+          z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+  })('1a4e91cb-50c2-4872-4fdc-813b2311acce');
+
+  pendo.initialize({
+    visitor: {
+        id: "12345",
+        email: "email@gmail.com",
+        firstName: "john",
+        lastName: "doe",
+    },
+});
+  </script>
   </head>
 
   <body>
